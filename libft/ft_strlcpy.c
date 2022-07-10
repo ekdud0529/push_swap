@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/12 16:15:55 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/18 15:49:46 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	size_t			len;
+	size_t			index;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	index = 0;
+	while ((index + 1 < size) && *(src + index))
+	{
+		*(dest + index) = *(src + index);
+		index++;
+	}
+	*(dest + index) = '\0';
+	return (len);
 }

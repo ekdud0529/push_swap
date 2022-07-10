@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/20 17:33:44 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/25 19:02:56 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+t_list	*ft_lstnew(void *content)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	t_list	*newlst;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	newlst = (t_list *)malloc(sizeof(t_list));
+	if (!newlst)
+		return (0);
+	newlst -> content = content;
+	newlst -> next = 0;
+	return (newlst);
 }

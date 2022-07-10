@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/16 18:07:10 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/18 15:43:42 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+int	ft_atoi(const char *str)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	int			sign;
+	long long	num;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	sign = 1;
+	num = 0;
+	while ((9 <= *str && *str <= 13) || *str == ' ')
+	{
+		str++;
+	}
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while ('0' <= *str && *str <= '9')
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	num *= sign;
+	return ((int)num);
 }

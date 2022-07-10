@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/20 17:57:24 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/23 15:24:00 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	t_list	*tmp;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	if (*lst && del)
+	{
+		while (*lst)
+		{
+			tmp = *lst;
+			*lst = (*lst)->next;
+			ft_lstdelone(tmp, del);
+			tmp = 0;
+		}
+	}
 }

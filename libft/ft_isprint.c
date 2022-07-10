@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2021/11/18 17:36:15 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/27 21:57:52 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+int	ft_isprint(int c)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
-
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
+	if (32 <= c && c <= 126)
+	{
+		return (c);
+	}
 	return (0);
 }

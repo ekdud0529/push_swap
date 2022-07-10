@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/20 17:44:21 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/25 19:02:36 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
-
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
+	if (lst)
+	{
+		while (lst->next)
+		{
+			lst = lst -> next;
+		}
+		return (lst);
+	}
 	return (0);
 }

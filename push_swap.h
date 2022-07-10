@@ -14,12 +14,12 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-
+# include "libft/libft.h"
 typedef struct	s_linkedlist
 {
 	int	value;
-	node	*pre;
-	node	*next;
-}	t_list;
+	t_stack	*pre;
+	t_stack	*next;
+}	t_stack;
 
 #endif

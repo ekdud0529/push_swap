@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2021/11/18 17:32:59 by daykim            #+#    #+#             */
+/*   Updated: 2021/11/18 17:32:59 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	size_t	index;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	index = 0;
+	while (index < num)
+	{
+		*((unsigned char *)ptr + index) = value;
+		index++;
+	}
+	return (ptr);
 }

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/12 17:21:38 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/18 15:49:12 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+char	*ft_strchr(const char *str, int c)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	int	index;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
+	index = 0;
+	if (!str)
+		return (0);
+	while (*(str + index))
+	{
+		if (*(str + index) == (char)c)
+		{
+			return ((char *)str + index);
+		}
+		index++;
+	}
+	if ((char)c == '\0')
+		return ((char *)str + index);
 	return (0);
 }

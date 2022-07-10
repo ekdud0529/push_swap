@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/15 19:27:08 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/18 15:46:29 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	size_t			index;
+	unsigned char	*s;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
+	s = (unsigned char *)str;
+	index = 0;
+	while (index < n)
+	{
+		if (*(s + index) == (unsigned char)c)
+		{
+			return ((void *)(s + index));
+		}
+		index++;
+	}
 	return (0);
 }

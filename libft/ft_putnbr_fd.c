@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/19 16:51:50 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/25 19:02:13 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	int			nums[10];
+	long long	num;
+	int			index;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
-	return (0);
+	num = n;
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		num *= -1;
+	}
+	index = 0;
+	if (num == 0)
+		nums[index++] = 0;
+	while (num)
+	{
+		nums[index++] = num % 10;
+		num /= 10;
+	}
+	while (index--)
+	{
+		ft_putchar_fd((nums[index] + '0'), fd);
+	}
 }

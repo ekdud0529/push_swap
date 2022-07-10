@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/01/16 18:02:27 by daykim            #+#    #+#             */
+/*   Updated: 2022/01/27 22:16:33 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error()
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
+	size_t	i;
 
-int	main(int argc, char *argv[])
-{
-	int	*input;
-	parsing_arg(argc, argv);
+	i = 0;
+	while (i < n)
+	{
+		if (!*(str1 + i) && !*(str2 + i))
+			return (0);
+		if (*(str1 + i) != *(str2 + i))
+			return ((unsigned char)*(str1 + i) - (unsigned char)*(str2 + i));
+		i++;
+	}
 	return (0);
 }
