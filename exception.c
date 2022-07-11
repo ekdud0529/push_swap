@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_argv.c                                       :+:      :+:    :+:   */
+/*   exception.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 15:57:56 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/10 15:57:56 by daykim           ###   ########.fr       */
+/*   Created: 2022/07/11 22:00:26 by daykim            #+#    #+#             */
+/*   Updated: 2022/07/11 22:00:26 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parsing_arg(int argc, char *argv[])
+void	ft_check_duplicate()
 {
-	if (argc < 2)
-		ft_error();
-	
+
+}
+
+void	ft_check_sort()
+{
+
 }

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_error()
+void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 1);
 	exit(1);
@@ -20,7 +20,16 @@ void	ft_error()
 
 int	main(int argc, char *argv[])
 {
-	int	*input;
-	parsing_arg(argc, argv);
+	int		*input;
+	t_stack	*pushswap;
+	
+	if (argc > 2)
+	{
+		// parsing and push stack
+		parsing_arg(argv, &pushswap);
+		// exception
+		// check sort
+		// sort -> greedy
+	}
 	return (0);
 }
