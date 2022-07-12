@@ -45,10 +45,10 @@ void	ft_check_sort(t_stack *pushswap, int size)
 	node = pushswap->stack_a->next;
 	while (node->next)
 	{
-		if(node->value > node->next->value)
+		if (node->value > node->next->value)
 		{
 			flag = 1;
-			break;
+			break ;
 		}
 		node = node->next;
 	}

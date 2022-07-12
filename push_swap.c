@@ -32,8 +32,8 @@ int	main(int argc, char *argv[])
 		ft_check_duplicate(&pushswap, pushswap->a_size);
 		ft_check_sort(&pushswap, pushswap->a_size);
 
-		// check sort
 		// sort -> greedy
+		
 	}
 	return (0);
 }

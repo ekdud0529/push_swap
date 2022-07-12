@@ -43,9 +43,9 @@ static int	ft_atoll(const char *str)
 	while (('0' <= *str) && (*str <= '9'))
 	{
 		num = num * 10 + (*str - '0');
-		if  ((sign == 1) && (num > INT_MAX))
+		if ((sign == 1) && (num > INT_MAX))
 			ft_error();
-		if((sign == -1) && (num > -INT_MIN))
+		if ((sign == -1) && (num > -INT_MIN))
 			ft_error();
 		str++;
 	}
