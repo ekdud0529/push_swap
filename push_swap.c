@@ -26,8 +26,13 @@ int	main(int argc, char *argv[])
 	if (argc > 2)
 	{
 		// parsing and push stack
+		pushswap = ft_new_stack();
 		parsing_arg(argv, &pushswap);
-		// exception
+
+		// exception 중복 체크, 정렬여부 체크(-> 에러 출력 X)
+		ft_check_duplicate(&pushswap, pushswap->a_size);
+		ft_check_sort(&pushswap, pushswap->a_size);
+
 		// check sort
 		// sort -> greedy
 	}
