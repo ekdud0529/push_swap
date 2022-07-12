@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-bool	ft_check_duplicate(t_stack *pushswap, int size)
+void	ft_check_duplicate(t_stack *pushswap, int size)
 {
 	t_node	node;
 	t_node	search;
@@ -35,7 +35,7 @@ bool	ft_check_duplicate(t_stack *pushswap, int size)
 	}
 }
 
-bool	ft_check_sort(t_stack *pushswap, int size)
+void	ft_check_sort(t_stack *pushswap, int size)
 {
 	t_node	node;
 	int		flag;
