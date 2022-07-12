@@ -17,8 +17,8 @@
 # include "libft/libft.h"
 typedef struct	s_linkedlist
 {
-	t_node	*pre;
-	t_node	*next;
+	struct s_linkedlist	*pre;
+	struct s_linkedlist	*next;
 	int		value;
 }	t_node;
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 	int		b_size;
 }	t_stack;
 
-void	ft_parsing(char *argv[], t_node head);
+void	ft_parsing(char *argv[], t_stack *pushswap);
 void	ft_error(void);
 
 t_node	*ft_new_node(void);
