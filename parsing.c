@@ -43,9 +43,9 @@ static int	ft_atoll(const char *str)
 	while (('0' <= *str) && (*str <= '9'))
 	{
 		num = num * 10 + (*str - '0');
-		if  ((flag == 1) && (num > INT_MAX))
+		if  ((sign == 1) && (num > INT_MAX))
 			ft_error();
-		if((flag == -1) && (num > -INT_MIN))
+		if((sign == -1) && (num > -INT_MIN))
 			ft_error();
 		str++;
 	}
@@ -54,7 +54,7 @@ static int	ft_atoll(const char *str)
 	return ((int)(num * sign));
 }
 
-int	*ft_parsing(char *argv[], t_stack *pushswap)
+void	ft_parsing(char *argv[], t_stack *pushswap)
 {
 	int		index1;
 	int		index2;
@@ -68,7 +68,7 @@ int	*ft_parsing(char *argv[], t_stack *pushswap)
 		else
 		{
 			index2 = 0;
-			tmp = ft_split(argv[i], ' ');
+			tmp = ft_split(argv[index2], ' ');
 			while (tmp[index2])
 			{
 				ft_insert_stack(&pushswap, ft_atoll(argv[index2]));
@@ -76,6 +76,6 @@ int	*ft_parsing(char *argv[], t_stack *pushswap)
 			}
 			ft_free_list(tmp);
 		}
-		i++;
+		index1++;
 	}
 }

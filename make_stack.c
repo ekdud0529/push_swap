@@ -18,7 +18,7 @@ t_node	*ft_new_node(void)
 
 	new = 0;
 	new = (t_node *)malloc(sizeof(t_node));
-	new->prev = 0;
+	new->pre = 0;
 	new->next = 0;
 	new->value = 0;
 	return (new);

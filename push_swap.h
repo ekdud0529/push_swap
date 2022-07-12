@@ -13,12 +13,12 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
+# include <limits.h>
 # include "libft/libft.h"
 typedef struct	s_linkedlist
 {
-	struct t_node	*pre;
-	struct t_node	*next;
+	t_node	*pre;
+	t_node	*next;
 	int		value;
 }	t_node;
 
@@ -37,6 +37,7 @@ void	ft_error(void);
 
 t_node	*ft_new_node(void);
 t_stack	*ft_new_stack(void);
+void	ft_insert_stack(t_stack *pushswap, int num);
 
 void	ft_check_duplicate(t_stack *pushswap, int size);
 void	ft_check_sort(t_stack *pushswap, int size);

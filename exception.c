@@ -14,8 +14,8 @@
 
 void	ft_check_duplicate(t_stack *pushswap, int size)
 {
-	t_node	node;
-	t_node	search;
+	t_node	*node;
+	t_node	*search;
 	int		num;
 
 	node = ft_new_node();
@@ -37,7 +37,7 @@ void	ft_check_duplicate(t_stack *pushswap, int size)
 
 void	ft_check_sort(t_stack *pushswap, int size)
 {
-	t_node	node;
+	t_node	*node;
 	int		flag;
 
 	flag = 0;
