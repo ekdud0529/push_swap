@@ -40,7 +40,7 @@ static int	ft_atoll(const char *str)
 			sign = -1;
 		str++;
 	}
-	while (('0' <= *str) && (*str <= '9'))
+	while (ft_isdigit(*str))
 	{
 		num = num * 10 + (*str - '0');
 		if ((sign == 1) && (num > INT_MAX))
