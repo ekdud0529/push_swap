@@ -29,8 +29,8 @@ int	main(int argc, char *argv[])
 		ft_parsing(argv, &pushswap);
 
 		// exception 중복 체크, 정렬여부 체크(-> 에러 출력 X)
-		ft_check_duplicate(&pushswap, pushswap->a_size);
-		ft_check_sort(&pushswap, pushswap->a_size);
+		ft_check_duplicate(pushswap);
+		ft_check_sort(pushswap);
 
 		// sort -> greedy
 		

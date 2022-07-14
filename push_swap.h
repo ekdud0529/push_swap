@@ -39,7 +39,7 @@ t_node	*ft_new_node(void);
 t_stack	*ft_new_stack(void);
 void	ft_insert_stack(t_stack *pushswap, int num);
 
-void	ft_check_duplicate(t_stack *pushswap, int size);
-void	ft_check_sort(t_stack *pushswap, int size);
+void	ft_check_duplicate(t_stack *pushswap);
+void	ft_check_sort(t_stack *pushswap);
 
 #endif

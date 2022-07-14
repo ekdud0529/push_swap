@@ -45,7 +45,7 @@ static int	ft_atoll(const char *str)
 		num = num * 10 + (*str - '0');
 		if ((sign == 1) && (num > INT_MAX))
 			ft_error();
-		if ((sign == -1) && (num > -INT_MIN))
+		if ((sign == -1) && (num > -(long long)(INT_MIN)))
 			ft_error();
 		str++;
 	}
@@ -60,18 +60,18 @@ void	ft_parsing(char *argv[], t_stack *pushswap)
 	int		index2;
 	char	**tmp;
 
-	index1 = 0;
+	index1 = 1;
 	while (argv[index1])
 	{
 		if (!ft_strchr(argv[index1], ' '))
-			ft_insert_stack(&pushswap, ft_atoll(argv[index1]));
+			ft_insert_stack(pushswap, ft_atoll(argv[index1]));
 		else
 		{
 			index2 = 0;
 			tmp = ft_split(argv[index2], ' ');
 			while (tmp[index2])
 			{
-				ft_insert_stack(&pushswap, ft_atoll(argv[index2]));
+				ft_insert_stack(pushswap, ft_atoll(argv[index2]));
 				index2++;
 			}
 			ft_free_list(tmp);

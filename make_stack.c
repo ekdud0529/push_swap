@@ -42,9 +42,7 @@ t_stack	*ft_new_stack(void)
 void	ft_insert_stack(t_stack *pushswap, int num)
 {
 	t_node	*new;
-	int		i;
 
-	i = 0;
 	new = ft_new_node();
 	new->value = num;
 	pushswap->bottom_a->pre->next = new;
