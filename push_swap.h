@@ -15,11 +15,12 @@
 
 # include <limits.h>
 # include "libft/libft.h"
-typedef struct	s_linkedlist
+
+typedef struct s_linkedlist
 {
 	struct s_linkedlist	*pre;
 	struct s_linkedlist	*next;
-	int		value;
+	int					value;
 }	t_node;
 
 typedef struct s_stack
@@ -41,5 +42,9 @@ void	ft_insert_stack(t_stack *pushswap, int num);
 
 void	ft_check_duplicate(t_stack *pushswap);
 void	ft_check_sort(t_stack *pushswap);
+
+void	sa(t_stack *pushswap);
+void	sb(t_stack *pushswap);
+void	ss(t_stack *pushswap);
 
 #endif

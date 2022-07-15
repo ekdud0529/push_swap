@@ -10,3 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	ra(t_stack *pushswap)
+{
+	t_node	*node;
+
+	if (pushswap->a_size < 2)
+		return ;
+	node = pushswap->stack_a->next;
+	pushswap->stack_a->next = pushswap->stack_a->next->next;
+	pushswap->stack_a->next->next->pre = pushswap->stack_a;
+	pushswap->bottom_a->pre->next = node;
+	node->pre = pushswap->bottom_a->pre;
+	node->next = pushswap->bottom_a;
+	pushswap->bottom_a->pre = node;
+}
+
+void	rb(t_stack *pushswap)
+{
+	t_node	*node;
+
+	if (pushswap->b_size < 2)
+		return ;
+	node = pushswap->stack_b->next;
+	pushswap->stack_b->next = pushswap->stack_b->next->next;
+	pushswap->stack_b->next->next->pre = pushswap->stack_b;
+	pushswap->bottom_b->pre->next = node;
+	node->pre = pushswap->bottom_b->pre;
+	node->next = pushswap->bottom_b;
+	pushswap->bottom_b->pre = node;
+}
+
+void	rr(t_stack *pushswap)
+{
+	t_node	*node;
+
+	if ((pushswap->a_size < 2) || (pushswap->b_size < 2))
+		return ;
+	node = pushswap->stack_a->next;
+	pushswap->stack_a->next = pushswap->stack_a->next->next;
+	pushswap->stack_a->next->next->pre = pushswap->stack_a;
+	pushswap->bottom_a->pre->next = node;
+	node->pre = pushswap->bottom_a->pre;
+	node->next = pushswap->bottom_a;
+	pushswap->bottom_a->pre = node;
+	node = pushswap->stack_b->next;
+	pushswap->stack_b->next = pushswap->stack_b->next->next;
+	pushswap->stack_b->next->next->pre = pushswap->stack_b;
+	pushswap->bottom_b->pre->next = node;
+	node->pre = pushswap->bottom_b->pre;
+	node->next = pushswap->bottom_b;
+	pushswap->bottom_b->pre = node;
+}
