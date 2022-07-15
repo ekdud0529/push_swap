@@ -47,4 +47,15 @@ void	sa(t_stack *pushswap);
 void	sb(t_stack *pushswap);
 void	ss(t_stack *pushswap);
 
+void	pa(t_stack *pushswap);
+void	pb(t_stack *pushswap);
+
+void	ra(t_stack *pushswap);
+void	rb(t_stack *pushswap);
+void	rr(t_stack *pushswap);
+
+void	rra(t_stack *pushswap);
+void	rrb(t_stack *pushswap);
+void	rrr(t_stack *pushswap);
+
 #endif
