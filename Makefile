@@ -19,7 +19,8 @@ RM = rm -rf
 LIBFT_DIR = ./libft
 LIBFLAGS = -L $(LIBFT_DIR) -lft
 
-SRCS = push_swap.c parsing.c make_stack.c exception.c
+SRCS = push_swap.c parsing.c make_stack.c exception.c\
+		operation/push.c operation/rotate.c operation/rrotate.c operation/swap.c
 OBJS = $(SRCS:.c=.o)
 
 INCFLAGS = -I./ -I./libft
