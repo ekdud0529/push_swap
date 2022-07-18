@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   three_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daykim <daykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:43:12 by daykim            #+#    #+#             */
-/*   Updated: 2022/07/03 16:43:12 by daykim           ###   ########.fr       */
+/*   Created: 2022/07/18 14:50:21 by daykim            #+#    #+#             */
+/*   Updated: 2022/07/18 14:50:21 by daykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void	ft_sort_132(t_stack *pushswap)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
+	sa(pushswap);
+	ra(pushswap);
 }
 
-int	main(int argc, char *argv[])
+void	ft_sort_213(t_stack *pushswap)
 {
-	t_stack	*pushswap;
+	sa(pushswap);
+}
 
-	if (argc > 2)
-	{
-		pushswap = ft_new_stack();
-		ft_parsing(argv, pushswap);
-		ft_check_duplicate(pushswap);
-		ft_check_sort(pushswap);
-	}
-	ft_sort(pushswap);
-	return (0);
+void	ft_sort_231(t_stack *pushswap)
+{
+	rra(pushswap);
+}
+
+void	ft_sort_312(t_stack *pushswap)
+{
+	ra(pushswap);
+}
+
+void	ft_sort_321(t_stack *pushswap)
+{
+	sa(pushswap);
+	rra(pushswap);
 }
