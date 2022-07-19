@@ -25,7 +25,7 @@ void	ft_sort(t_stack *pushswap)
 	}
 	else
 	{
-		// stack b로 원소 넘기는데 pivot 기준으로 넘기기?
+		ft_devide_3groups(pushswap);
 		ft_greedy_sort(pushswap);
 	}
 }
@@ -34,12 +34,26 @@ void	ft_greedy_sort(t_stack *pushswap)
 {
 	int		a_pos;
 	int		b_pos;
-	int		index;
-	t_stack	*st_b;
-	int		num;
 
-	index = 0;
 	st_b = pushswap->stack_b;
+	if (pushswap->a_size == 2)
+	{
+		if ((pushswap->stack_a->next->value) > (pushswap->bottom_a->pre->value))
+			sa(pushswap);
+	}
+	else if (pushswap->a_size == 3)
+	{
+		ft_three_sort(pushswap);
+	}
+	while (pushswap->b_size)
+	{
+		a_pos = 0;
+		b_pos = 0;
+		ft_min_rotate(pushswap, &a_pos, &b_pos);
+		ft_rr(pushswap, &a_pos, &b_pos);
+		ft_rotate_stack(pushswap, a_pos, b_pos);
+		pa(pushswap);
+	}
 }
 
 void	ft_three_sort(t_stack *pushswap)

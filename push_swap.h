@@ -46,16 +46,29 @@ void	ft_check_sort(t_stack *pushswap);
 void	sa(t_stack *pushswap);
 void	sb(t_stack *pushswap);
 void	ss(t_stack *pushswap);
-
 void	pa(t_stack *pushswap);
 void	pb(t_stack *pushswap);
-
 void	ra(t_stack *pushswap);
 void	rb(t_stack *pushswap);
 void	rr(t_stack *pushswap);
-
 void	rra(t_stack *pushswap);
 void	rrb(t_stack *pushswap);
 void	rrr(t_stack *pushswap);
+
+void	ft_sort(t_stack *pushswap);
+void	ft_greedy_sort(t_stack *pushswap);
+void	ft_three_sort(t_stack *pushswap);
+
+void	ft_devide_3groups(t_stack *pushswap);
+void	ft_move_node(t_stack *pushswap, int pv1, int pv2);
+void	ft_min_rotate(t_stack *pushswap, int *a, int *b);
+void	ft_rr(t_stack *pushswap, int *a, int *b);
+void	ft_rotate_stack(t_stack *pushswap, int a, int b);
+
+void	ft_sort_132(t_stack *pushswap)
+void	ft_sort_213(t_stack *pushswap);
+void	ft_sort_231(t_stack *pushswap);
+void	ft_sort_312(t_stack *pushswap);
+void	ft_sort_321(t_stack *pushswap);
 
 #endif
