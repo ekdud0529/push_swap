@@ -66,7 +66,7 @@ void	ft_min_rotate(t_stack *pushswap, int *a, int *b)
 	while (index < pushswap->b_size)
 	{
 		num = st_b->value;
-		// b의 stack a에서의 위치
+		pos_a = ft_find_location(pushswap, num);
 		if ((pushswap->b_size / 2) < index)
 			pos_b = (pushswap->b_size - index) * (-1);
 		else
@@ -81,12 +81,46 @@ void	ft_min_rotate(t_stack *pushswap, int *a, int *b)
 	}
 }
 
-void	ft_rr(t_stack *pushswap, int *a, int *b)
+void	ft_rr_stack(t_stack *pushswap, int *a, int *b)
 {
-
+	while (*a && *b && (*a > 0) && (*b > 0))
+	{
+		rr(pushswap);
+		*a = *a - 1;
+		*b = *b - 1;
+	}
+	while (*a && *b && (*a < 0) && (*b < 0))
+	{
+		rrr(pushswap);
+		*a = *a - 1;
+		*b = *b - 1;
+	}
 }
 
 void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 {
-
+	while (a)
+	{
+		if (a-- > 0)
+		{
+			ra(pushswap);
+		}
+		else
+		{
+			rra(pushswap);
+			a++;
+		}
+	}
+	while (b)
+	{
+		if (b-- > 0)
+		{
+			rb(pushswap);
+		}
+		else
+		{
+			rrb(pushswap);
+			b++;
+		}
+	}
 }

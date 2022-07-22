@@ -62,7 +62,7 @@ void	ft_three_sort(t_stack *pushswap);
 void	ft_devide_3groups(t_stack *pushswap);
 void	ft_move_node(t_stack *pushswap, int pv1, int pv2);
 void	ft_min_rotate(t_stack *pushswap, int *a, int *b);
-void	ft_rr(t_stack *pushswap, int *a, int *b);
+void	ft_rr_stack(t_stack *pushswap, int *a, int *b);
 void	ft_rotate_stack(t_stack *pushswap, int a, int b);
 
 void	ft_sort_132(t_stack *pushswap)
@@ -70,5 +70,11 @@ void	ft_sort_213(t_stack *pushswap);
 void	ft_sort_231(t_stack *pushswap);
 void	ft_sort_312(t_stack *pushswap);
 void	ft_sort_321(t_stack *pushswap);
+
+int	ft_get_min(t_node *st);
+int	ft_get_max(t_node *st);
+int	ft_set_mid(t_stack *pushswap, int num);
+int	ft_set_min(t_stack *pushswap);
+int	ft_set_max(t_stack *pushswap);
 
 #endif
