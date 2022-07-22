@@ -71,7 +71,7 @@ void	ft_parsing(char *argv[], t_stack *pushswap)
 			tmp = ft_split(argv[index1], ' ');
 			while (tmp[index2])
 			{
-				ft_insert_stack(pushswap, ft_atoll(argv[index2]));
+				ft_insert_stack(pushswap, ft_atoll(tmp[index2]));
 				index2++;
 			}
 			ft_free_list(tmp);
