@@ -69,13 +69,13 @@ void	ft_three_sort(t_stack *pushswap)
 	if ((n1 < n2) && (n2 > n3) && (n1 < n3))
 		ft_sort_132(pushswap);
 	else if ((n1 > n2) && (n2 < n3) && (n1 < n3))
-		ft_sort_213();
+		ft_sort_213(pushswap);
 	else if ((n1 < n2) && (n2 > n1) && (n1 > n3))
-		ft_sort_231();
+		ft_sort_231(pushswap);
 	else if ((n1 > n2) && (n2 < n3) && (n1 > n3))
-		ft_sort_312();
+		ft_sort_312(pushswap);
 	else if ((n1 > n2) && (n2 > n3) && (n1 > n3))
-		ft_sort_321();
+		ft_sort_321(pushswap);
 }
 
 void	ft_devide_3groups(t_stack *pushswap)
