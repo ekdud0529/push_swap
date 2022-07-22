@@ -14,12 +14,12 @@
 
 void	ft_move_node(t_stack *pushswap, int pv1, int pv2)
 {
-	if ((pushswap->stack_a->next) < pv1)
+	if ((pushswap->stack_a->next->value) < pv1)
 	{
 		pb(pushswap);
 		rb(pushswap);
 	}
-	else if ((pushswap->stack_a->next) < pv2)
+	else if ((pushswap->stack_a->next->value) < pv2)
 	{
 		pb(pushswap);
 	}
