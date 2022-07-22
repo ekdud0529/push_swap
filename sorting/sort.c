@@ -36,7 +36,6 @@ void	ft_greedy_sort(t_stack *pushswap)
 	int		a_pos;
 	int		b_pos;
 
-	st_b = pushswap->stack_b;
 	if (pushswap->a_size == 2)
 	{
 		if ((pushswap->stack_a->next->value) > (pushswap->bottom_a->pre->value))
@@ -84,8 +83,8 @@ void	ft_devide_3groups(t_stack *pushswap)
 	int	pivot2;
 	int index;
 
-	pivot1 = pushswap->stack_a->next;
-	pivot2 = pushswap->stack_a->next->next;
+	pivot1 = pushswap->stack_a->next->value;
+	pivot2 = pushswap->stack_a->next->next->value;
 	if (pivot1 > pivot2)
 	{
 		index = pivot1;
