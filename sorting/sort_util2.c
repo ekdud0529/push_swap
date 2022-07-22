@@ -29,10 +29,8 @@ int	ft_smaller_move(int x, int y, int a, int b)
 
 void	ft_final_sort(t_stack *pushswap)
 {
-	int	min_num;
 	int	index;
 
-	min_num = ft_get_min(pushswap->stack_a->next);
 	index = ft_set_min(pushswap);
 	while (index != 0)
 	{
