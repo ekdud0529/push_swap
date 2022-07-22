@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 		ft_parsing(argv, pushswap);
 		ft_check_duplicate(pushswap);
 		ft_check_sort(pushswap);
+		ft_sort(pushswap);
 	}
-	ft_sort(pushswap);
 	return (0);
 }
