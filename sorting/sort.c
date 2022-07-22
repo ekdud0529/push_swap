@@ -27,6 +27,7 @@ void	ft_sort(t_stack *pushswap)
 	{
 		ft_devide_3groups(pushswap);
 		ft_greedy_sort(pushswap);
+		ft_final_sort(pushswap);
 	}
 }
 
@@ -77,15 +78,28 @@ void	ft_three_sort(t_stack *pushswap)
 		ft_sort_321();
 }
 
-int	ft_find_location(t_stack *pushswap, int num)
+void	ft_devide_3groups(t_stack *pushswap)
 {
-	int	index;
+	int	pivot1;
+	int	pivot2;
+	int index;
 
-	if (num < ft_get_min(pushswap->stack_a->next))
-		index = ft_set_min(pushswap);
-	else if (num > ft_get_max(pushswap->stack_a->next))
-		index = ft_set_max(pushswap);
-	else
-		index = ft_set_mid(pushswap, num);
-	return (index);
+	pivot1 = pushswap->stack_a->next;
+	pivot2 = pushswap->stack_a->next->next;
+	if (pivot1 > pivot2)
+	{
+		index = pivot1;
+		pivot1 = pivot2;
+		pivot2 = index;
+	}
+	index = pushswap->a_size;
+	while (index)
+	{
+		ft_move_node(pushswap, pivot1, pivot2);
+		index--;
+	}
+	while (pushswap->a_size > 3)
+	{
+		pb(pushswap);
+	}
 }

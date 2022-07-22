@@ -12,32 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_devide_3groups(t_stack *pushswap)
-{
-	int	pivot1;
-	int	pivot2;
-	int index;
-
-	pivot1 = pushswap->stack_a->next;
-	pivot2 = pushswap->stack_a->next->next;
-	if (pivot1 > pivot2)
-	{
-		index = pivot1;
-		pivot1 = pivot2;
-		pivot2 = index;
-	}
-	index = pushswap->a_size;
-	while (index)
-	{
-		ft_move_node(pushswap, pivot1, pivot2);
-		index--;
-	}
-	while (pushswap->a_size > 3)
-	{
-		pb(pushswap);
-	}
-}
-
 void	ft_move_node(t_stack *pushswap, int pv1, int pv2)
 {
 	if ((pushswap->stack_a->next) < pv1)
@@ -51,6 +25,19 @@ void	ft_move_node(t_stack *pushswap, int pv1, int pv2)
 	}
 	else
 		ra(pushswap);
+}
+
+int	ft_find_location(t_stack *pushswap, int num)
+{
+	int	index;
+
+	if (num < ft_get_min(pushswap->stack_a->next))
+		index = ft_set_min(pushswap);
+	else if (num > ft_get_max(pushswap->stack_a->next))
+		index = ft_set_max(pushswap);
+	else
+		index = ft_set_mid(pushswap, num);
+	return (index);
 }
 
 void	ft_min_rotate(t_stack *pushswap, int *a, int *b)
@@ -99,7 +86,7 @@ void	ft_rr_stack(t_stack *pushswap, int *a, int *b)
 
 void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 {
-	while (a)
+	while (a != 0)
 	{
 		if (a-- > 0)
 		{
@@ -111,7 +98,7 @@ void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 			a++;
 		}
 	}
-	while (b)
+	while (b != 0)
 	{
 		if (b-- > 0)
 		{
