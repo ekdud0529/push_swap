@@ -67,7 +67,7 @@ void	ft_rr_stack(t_stack *pushswap, int *a, int *b);
 void	ft_rotate_stack(t_stack *pushswap, int a, int b);
 int		ft_smaller_move(int x, int y, int a, int b);
 
-void	ft_sort_132(t_stack *pushswap)
+void	ft_sort_132(t_stack *pushswap);
 void	ft_sort_213(t_stack *pushswap);
 void	ft_sort_231(t_stack *pushswap);
 void	ft_sort_312(t_stack *pushswap);
