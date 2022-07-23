@@ -21,14 +21,21 @@ void	ft_error(void)
 int	main(int argc, char *argv[])
 {
 	t_stack	*pushswap;
+	int		flag;
 
 	if (argc > 2)
 	{
 		pushswap = ft_new_stack();
+		write(1, "well done\n", 10);
 		ft_parsing(argv, pushswap);
+		write(1, "well done\n", 10);
 		ft_check_duplicate(pushswap);
-		ft_check_sort(pushswap);
-		ft_sort(pushswap);
+		write(1, "well done\n", 10);
+		flag = ft_check_sort(pushswap);
+		write(1, "well done\n", 10);
+		if (flag)
+			ft_sort(pushswap);
+		write(1, "well done\n", 10);
 	}
 	return (0);
 }

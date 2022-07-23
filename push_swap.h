@@ -41,7 +41,7 @@ t_stack	*ft_new_stack(void);
 void	ft_insert_stack(t_stack *pushswap, int num);
 
 void	ft_check_duplicate(t_stack *pushswap);
-void	ft_check_sort(t_stack *pushswap);
+int		ft_check_sort(t_stack *pushswap);
 
 void	sa(t_stack *pushswap);
 void	sb(t_stack *pushswap);

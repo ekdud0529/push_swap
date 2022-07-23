@@ -35,7 +35,7 @@ void	ft_check_duplicate(t_stack *pushswap)
 	}
 }
 
-void	ft_check_sort(t_stack *pushswap)
+int	ft_check_sort(t_stack *pushswap)
 {
 	t_node	*node;
 	int		flag;
@@ -52,8 +52,5 @@ void	ft_check_sort(t_stack *pushswap)
 		}
 		node = node->next;
 	}
-	if (flag)
-	{
-		exit(0);
-	}
+	return (flag);
 }
