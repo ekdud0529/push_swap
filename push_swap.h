@@ -65,6 +65,8 @@ void	ft_move_node(t_stack *pushswap, int pv1, int pv2);
 void	ft_min_rotate(t_stack *pushswap, int *a, int *b);
 void	ft_rr_stack(t_stack *pushswap, int *a, int *b);
 void	ft_rotate_stack(t_stack *pushswap, int a, int b);
+void	ft_rotate_b(t_stack *pushswap, int b);
+void	ft_rotate_a(t_stack *pushswap, int a);
 int		ft_smaller_move(int x, int y, int a, int b);
 
 void	ft_sort_132(t_stack *pushswap);

@@ -86,26 +86,6 @@ void	ft_rr_stack(t_stack *pushswap, int *a, int *b)
 
 void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 {
-	while (a != 0)
-	{
-		if (a-- > 0)
-		{
-			ra(pushswap);
-		}
-		else if (a++ < 0)
-		{
-			rra(pushswap);
-		}
-	}
-	while (b != 0)
-	{
-		if (b-- > 0)
-		{
-			rb(pushswap);
-		}
-		else if (b++ < 0)
-		{
-			rrb(pushswap);
-		}
-	}
+	ft_rotate_a(pushswap, a);
+	ft_rotate_b(pushswap, b);
 }

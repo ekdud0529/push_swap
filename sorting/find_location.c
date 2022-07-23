@@ -35,7 +35,7 @@ int	ft_get_max(t_node *st)
 	max_num = st->value;
 	while (st->next)
 	{
-		if (max_num > st->value)
+		if (max_num < st->value)
 		{
 			max_num = st->value;
 		}
@@ -53,12 +53,15 @@ int	ft_set_mid(t_stack *pushswap, int num)
 	index = 0;
 	while (node->next)
 	{
-		if (node->value < num && num < node->next->value)
+		if ((node->value < num) && (num < node->next->value))
+		{
+			index++;
 			break ;
+		}
 		index++;
 		node = node->next;
 	}
-	if (index >= (pushswap->a_size) / 2)
+	if (index >= pushswap->a_size / 2)
 		index = (pushswap->a_size - index) * (-1);
 	return (index);
 }
@@ -100,7 +103,10 @@ int	ft_set_max(t_stack *pushswap)
 	{
 		num = node->value;
 		if (max_num == num)
+		{
+			index++;
 			break ;
+		}
 		index++;
 		node = node->next;
 	}

@@ -23,6 +23,7 @@ void	rra(t_stack *pushswap)
 	node->pre->next = pushswap->bottom_a;
 	node->pre = pushswap->stack_a;
 	node->next = pushswap->stack_a->next;
+	pushswap->stack_a->next->pre = node;
 	pushswap->stack_a->next = node;
 	ft_putstr_fd("rra\n", 1);
 }
@@ -38,6 +39,7 @@ void	rrb(t_stack *pushswap)
 	node->pre->next = pushswap->bottom_b;
 	node->pre = pushswap->stack_b;
 	node->next = pushswap->stack_b->next;
+	pushswap->stack_b->next->pre = node;
 	pushswap->stack_b->next = node;
 	ft_putstr_fd("rrb\n", 1);
 }
@@ -53,12 +55,14 @@ void	rrr(t_stack *pushswap)
 	node->pre->next = pushswap->bottom_a;
 	node->pre = pushswap->stack_a;
 	node->next = pushswap->stack_a->next;
+	pushswap->stack_a->next->pre = node;
 	pushswap->stack_a->next = node;
 	node = pushswap->bottom_b->pre;
 	pushswap->bottom_b->pre = node->pre;
 	node->pre->next = pushswap->bottom_b;
 	node->pre = pushswap->stack_b;
 	node->next = pushswap->stack_b->next;
+	pushswap->stack_b->next->pre = node;
 	pushswap->stack_b->next = node;
 	ft_putstr_fd("rrr\n", 1);
 }

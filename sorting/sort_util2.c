@@ -46,3 +46,37 @@ void	ft_final_sort(t_stack *pushswap)
 		}
 	}
 }
+
+void	ft_rotate_a(t_stack *pushswap, int a)
+{
+	while (a != 0)
+	{
+		if (a > 0)
+		{
+			ra(pushswap);
+			a--;
+		}
+		else
+		{
+			rra(pushswap);
+			a++;
+		}
+	}
+}
+
+void	ft_rotate_b(t_stack *pushswap, int b)
+{
+	while (b != 0)
+	{
+		if (b > 0)
+		{
+			rb(pushswap);
+			b--;
+		}
+		else
+		{
+			rrb(pushswap);
+			b++;
+		}
+	}
+}
