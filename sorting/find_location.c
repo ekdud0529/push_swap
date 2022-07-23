@@ -17,7 +17,7 @@ int	ft_get_min(t_node *st)
 	int	min_num;
 
 	min_num = st->value;
-	while (st)
+	while (st->next)
 	{
 		if (min_num > st->value)
 		{
@@ -33,7 +33,7 @@ int	ft_get_max(t_node *st)
 	int	max_num;
 
 	max_num = st->value;
-	while (st)
+	while (st->next)
 	{
 		if (max_num > st->value)
 		{
@@ -73,7 +73,7 @@ int	ft_set_min(t_stack *pushswap)
 	index = 0;
 	node = pushswap->stack_a->next;
 	min_num = ft_get_min(node);
-	while (node)
+	while (node->next)
 	{
 		num = node->value;
 		if (min_num == num)
@@ -96,7 +96,7 @@ int	ft_set_max(t_stack *pushswap)
 	index = 0;
 	node = pushswap->stack_a->next;
 	max_num = ft_get_max(node);
-	while (node)
+	while (node->next)
 	{
 		num = node->value;
 		if (max_num == num)
