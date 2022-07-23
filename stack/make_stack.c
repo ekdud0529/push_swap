@@ -16,7 +16,6 @@ t_node	*ft_new_node(void)
 {
 	t_node	*new;
 
-	new = 0;
 	new = (t_node *)malloc(sizeof(t_node));
 	new->pre = 0;
 	new->next = 0;
@@ -28,12 +27,15 @@ t_stack	*ft_new_stack(void)
 {
 	t_stack	*new;
 
-	new = 0;
 	new = (t_stack *)malloc(sizeof(t_stack));
 	new->stack_a = ft_new_node();
 	new->bottom_a = ft_new_node();
 	new->stack_a->next = new->bottom_a;
 	new->bottom_a->pre = new->stack_a;
+	new->stack_b = ft_new_node();
+	new->bottom_b = ft_new_node();
+	new->stack_b->next = new->bottom_b;
+	new->bottom_b->pre = new->stack_b;
 	new->a_size = 0;
 	new->b_size = 0;
 	return (new);

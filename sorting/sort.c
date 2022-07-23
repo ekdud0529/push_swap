@@ -81,7 +81,7 @@ void	ft_devide_3groups(t_stack *pushswap)
 {
 	int	pivot1;
 	int	pivot2;
-	int index;
+	int	index;
 
 	pivot1 = pushswap->stack_a->next->value;
 	pivot2 = pushswap->stack_a->next->next->value;
@@ -92,10 +92,9 @@ void	ft_devide_3groups(t_stack *pushswap)
 		pivot2 = index;
 	}
 	index = pushswap->a_size;
-	while (index)
+	while (index--)
 	{
 		ft_move_node(pushswap, pivot1, pivot2);
-		index--;
 	}
 	while (pushswap->a_size > 3)
 	{

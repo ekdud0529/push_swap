@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	ft_error(void)
 {
@@ -26,16 +27,20 @@ int	main(int argc, char *argv[])
 	if (argc > 2)
 	{
 		pushswap = ft_new_stack();
-		write(1, "well done\n", 10);
 		ft_parsing(argv, pushswap);
-		write(1, "well done\n", 10);
 		ft_check_duplicate(pushswap);
-		write(1, "well done\n", 10);
 		flag = ft_check_sort(pushswap);
-		write(1, "well done\n", 10);
 		if (flag)
 			ft_sort(pushswap);
-		write(1, "well done\n", 10);
 	}
+
+	t_node *node;
+	node = pushswap->stack_a->next;
+	while(node->next)
+	{
+		printf("%d\n", node->value);
+		node = node->next;
+	}
+
 	return (0);
 }

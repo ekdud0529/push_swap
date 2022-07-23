@@ -70,17 +70,17 @@ void	ft_min_rotate(t_stack *pushswap, int *a, int *b)
 
 void	ft_rr_stack(t_stack *pushswap, int *a, int *b)
 {
-	while (*a && *b && (*a > 0) && (*b > 0))
+	while ((*a != 0) && (*b != 0) && (*a > 0) && (*b > 0))
 	{
 		rr(pushswap);
 		*a = *a - 1;
 		*b = *b - 1;
 	}
-	while (*a && *b && (*a < 0) && (*b < 0))
+	while ((*a != 0) && (*b != 0) && (*a < 0) && (*b < 0))
 	{
 		rrr(pushswap);
-		*a = *a - 1;
-		*b = *b - 1;
+		*a = *a + 1;
+		*b = *b + 1;
 	}
 }
 
@@ -92,10 +92,9 @@ void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 		{
 			ra(pushswap);
 		}
-		else
+		else if (a++ < 0)
 		{
 			rra(pushswap);
-			a++;
 		}
 	}
 	while (b != 0)
@@ -104,10 +103,9 @@ void	ft_rotate_stack(t_stack *pushswap, int a, int b)
 		{
 			rb(pushswap);
 		}
-		else
+		else if (b++ < 0)
 		{
 			rrb(pushswap);
-			b++;
 		}
 	}
 }

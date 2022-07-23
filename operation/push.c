@@ -18,8 +18,9 @@ void	pa(t_stack *pushswap)
 
 	if (pushswap->b_size < 1)
 		return ;
-	node = pushswap->stack_b;
-	pushswap->stack_b = pushswap->stack_b->next;
+	node = pushswap->stack_b->next;
+	pushswap->stack_b->next = pushswap->stack_b->next->next;
+	pushswap->stack_b->next->pre = pushswap->stack_b;
 	if (pushswap->a_size == 0)
 	{
 		node->next = pushswap->bottom_a;
@@ -29,10 +30,10 @@ void	pa(t_stack *pushswap)
 	}
 	else
 	{
-		pushswap->bottom_a->pre->next = node;
-		node->pre = pushswap->bottom_a->pre;
-		pushswap->bottom_a->pre = node;
-		node->next = pushswap->bottom_a;
+		node->pre = pushswap->stack_a;
+		node->next = pushswap->stack_a->next;
+		pushswap->stack_a->next->pre = node;
+		pushswap->stack_a->next = node;
 	}
 	pushswap->a_size += 1;
 	pushswap->b_size -= 1;
@@ -45,8 +46,9 @@ void	pb(t_stack *pushswap)
 
 	if (pushswap->a_size < 1)
 		return ;
-	node = pushswap->stack_a;
-	pushswap->stack_a = pushswap->stack_a->next;
+	node = pushswap->stack_a->next;
+	pushswap->stack_a->next = pushswap->stack_a->next->next;
+	pushswap->stack_a->next->pre = pushswap->stack_a;
 	if (pushswap->b_size == 0)
 	{
 		node->next = pushswap->bottom_b;
@@ -56,10 +58,10 @@ void	pb(t_stack *pushswap)
 	}
 	else
 	{
-		pushswap->bottom_b->pre->next = node;
-		node->pre = pushswap->bottom_b->pre;
-		pushswap->bottom_b->pre = node;
-		node->next = pushswap->bottom_b;
+		node->pre = pushswap->stack_b;
+		node->next = pushswap->stack_b->next;
+		pushswap->stack_b->next->pre = node;
+		pushswap->stack_b->next = node;
 	}
 	pushswap->a_size -= 1;
 	pushswap->b_size += 1;
