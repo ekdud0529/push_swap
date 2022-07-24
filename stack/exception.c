@@ -41,9 +41,8 @@ int	ft_check_sort(t_stack *pushswap)
 	int		flag;
 
 	flag = 0;
-	node = ft_new_node();
 	node = pushswap->stack_a->next;
-	while (node->next)
+	while (node->next != pushswap->bottom_a)
 	{
 		if ((node->value) > (node->next->value))
 		{
