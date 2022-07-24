@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 	t_stack	*pushswap;
 	int		flag;
 
-	if (argc > 2)
+	if (argc >= 2)
 	{
 		pushswap = ft_new_stack();
 		ft_parsing(argv, pushswap);
@@ -33,14 +33,5 @@ int	main(int argc, char *argv[])
 		if (flag)
 			ft_sort(pushswap);
 	}
-
-	t_node *node;
-	node = pushswap->stack_a->next;
-	while(node->next)
-	{
-		printf("%d\n", node->value);
-		node = node->next;
-	}
-
 	return (0);
 }
