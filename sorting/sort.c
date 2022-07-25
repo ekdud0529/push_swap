@@ -79,18 +79,13 @@ void	ft_three_sort(t_stack *pushswap)
 
 void	ft_devide_3groups(t_stack *pushswap)
 {
-	int	pivot1;
-	int	pivot2;
-	int	index;
+	int		pivot1;
+	int		pivot2;
+	int		index;
 
 	pivot1 = pushswap->stack_a->next->value;
 	pivot2 = pushswap->stack_a->next->next->next->value;
-	if (pivot1 > pivot2)
-	{
-		index = pivot1;
-		pivot1 = pivot2;
-		pivot2 = index;
-	}
+	ft_get_pivot(pushswap, &pivot1, &pivot2);
 	index = pushswap->a_size;
 	while (index--)
 	{
@@ -100,4 +95,19 @@ void	ft_devide_3groups(t_stack *pushswap)
 	{
 		pb(pushswap);
 	}
+}
+
+int	ft_smaller_move(int x, int y, int a, int b)
+{
+	if (x < 0)
+		x *= -1;
+	if (y < 0)
+		y *= -1;
+	if (a < 0)
+		a *= -1;
+	if (b < 0)
+		b *= -1;
+	if ((x + y) > (a + b))
+		return (1);
+	return (0);
 }
