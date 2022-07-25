@@ -34,12 +34,12 @@ static int	ft_atoll(const char *str)
 	num = 0;
 	if (!(*str))
 		ft_error();
+	if (*str == '-')
+		sign = -1;
 	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
 		str++;
-	}
+	if (*str == '\0')
+		ft_error();
 	while (ft_isdigit(*str))
 	{
 		num = num * 10 + (*str - '0');
