@@ -12,21 +12,6 @@
 
 #include "../push_swap.h"
 
-int	ft_smaller_move(int x, int y, int a, int b)
-{
-	if (x < 0)
-		x *= -1;
-	if (y < 0)
-		y *= -1;
-	if (a < 0)
-		a *= -1;
-	if (b < 0)
-		b *= -1;
-	if ((x + y) > (a + b))
-		return (1);
-	return (0);
-}
-
 void	ft_final_sort(t_stack *pushswap)
 {
 	int	index;
@@ -79,4 +64,52 @@ void	ft_rotate_b(t_stack *pushswap, int b)
 			b++;
 		}
 	}
+}
+
+static void	ft_array_sort(int *num, int size)
+{
+	int		i;
+	int		j;
+	int		tmp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (num[i] > num[j])
+			{
+				tmp = num[i];
+				num[i] = num[j];
+				num[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_get_pivot(t_stack *pushswap, int *pv1, int *pv2)
+{
+	int		*num;
+	int		index;
+	t_node	*node;
+
+	num = (int *)malloc(sizeof(int) * (pushswap->a_size));
+	if (!num)
+		return ;
+	node = pushswap->stack_a->next;
+	index = 0;
+	while (node->next)
+	{
+		num[index] = node->value;
+		index++;
+		node = node->next;
+	}
+	index = pushswap->a_size;
+	ft_array_sort(num, index);
+	*pv1 = num[index / 3];
+	*pv2 = num[(index / 3) * 2];
+	free(num);
 }
