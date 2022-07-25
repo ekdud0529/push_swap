@@ -84,7 +84,7 @@ void	ft_devide_3groups(t_stack *pushswap)
 	int	index;
 
 	pivot1 = pushswap->stack_a->next->value;
-	pivot2 = pushswap->stack_a->next->next->value;
+	pivot2 = pushswap->stack_a->next->next->next->value;
 	if (pivot1 > pivot2)
 	{
 		index = pivot1;
